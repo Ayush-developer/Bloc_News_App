@@ -4,7 +4,7 @@ import './welcome_events.dart';
 import './welcome_states.dart';
 
 class NormalBloc extends Bloc<NormalEvent,NormalState>{
-  NormalBloc():super(NormalInitialState()){
+  NormalBloc():super(NormalOneState("So by colonel hearted ferrars. Draw from upon here gone add one. He in sportsman household otherwise it perceived instantly. Is inquiry no he several excited am. Called though excuse length ye needed it he having. Whatever throwing we on resolved entrance together graceful. Mrs assured add private married removed believe did she.")){
     on<ChangeEvent>((event,emit){
       if(event.i ==1){
         emit(NormalOneState("So by colonel hearted ferrars. Draw from upon here gone add one. He in sportsman household otherwise it perceived instantly. Is inquiry no he several excited am. Called though excuse length ye needed it he having. Whatever throwing we on resolved entrance together graceful. Mrs assured add private married removed believe did she."));

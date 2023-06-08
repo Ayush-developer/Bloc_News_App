@@ -33,12 +33,15 @@ class Pages extends StatelessWidget {
               child: BlocBuilder<NormalBloc,NormalState>(
                 builder:(context,state){
                   if (state is NormalOneState){
+                
                      return Text("Welcome");
                   }
                   else if (state is NormalTwoState){
+      
                      return Text("What is Up");
                   }
                   else if(state is NormalThreeState){
+          
                     return Text("Hey Everbody");
                   }
                   else{
@@ -47,7 +50,25 @@ class Pages extends StatelessWidget {
                 }
               )
             ),
-            Image(image: AssetImage('images/girl.jpeg')),
+            BlocBuilder<NormalBloc,NormalState>(
+              builder:(context,state){
+                if(state is NormalOneState){
+                    print('This is States 1');
+                  return Image(image:AssetImage('./images/girl.jpeg'));
+                }
+                else if (state is NormalTwoState){
+                    print('This is States 2');
+                  return Image(image:AssetImage('./images/measure.jpeg'));
+                }
+                else if(state is NormalThreeState){
+                    print('This is States 3');
+                  return Image(image:AssetImage('./images/nirma.png'));
+                }
+                else{
+                  return Container();
+                }
+              }
+            ),
              Padding(
               padding: const EdgeInsets.fromLTRB(20,30,20,20),
               child: BlocBuilder<NormalBloc,NormalState>(
