@@ -30,7 +30,22 @@ class Pages extends StatelessWidget {
          body: Column(children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(20,100,0,20),
-              child:  Text("Welcome"),
+              child: BlocBuilder<NormalBloc,NormalState>(
+                builder:(context,state){
+                  if (state is NormalOneState){
+                     return Text("Welcome");
+                  }
+                  else if (state is NormalTwoState){
+                     return Text("What is Up");
+                  }
+                  else if(state is NormalThreeState){
+                    return Text("Hey Everbody");
+                  }
+                  else{
+                    return Container();
+                  }
+                }
+              )
             ),
             Image(image: AssetImage('images/girl.jpeg')),
              Padding(
