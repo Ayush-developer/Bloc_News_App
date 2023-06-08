@@ -5,6 +5,7 @@ import 'package:project/pages/welcome/bloc/welcome_bloc.dart';
 import './bloc/welcome_events.dart';
 import './bloc/welcome_states.dart';
 import '../../app.dart';
+import '../Register/register.dart';
 
 class WelcomePage extends StatelessWidget {
   WelcomePage({super.key});
@@ -114,21 +115,42 @@ class Pages extends StatelessWidget {
                }
              ),
             ),
-            ElevatedButton(
-              onPressed: (){
-           Navigator.push(context,MaterialPageRoute(builder: (context) => StartApp()));
-              }
-            , child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-              child: Text("Register Now",
-                textAlign: TextAlign.left,
-                style:TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: GoogleFonts.roboto().fontFamily,
-                    
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                
+                ElevatedButton(
+                  onPressed: (){
+           Navigator.push(context,MaterialPageRoute(builder: (context) =>MyApps()));
+                  }
+                , child: Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  child: Text("Register Now",
+                    textAlign: TextAlign.left,
+                    style:TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: GoogleFonts.roboto().fontFamily,
+                        
+                    )),
                 )),
-            )),
+                 ElevatedButton(
+                  onPressed: (){
+           Navigator.push(context,MaterialPageRoute(builder: (context) => StartApp()));
+                  }
+                , child: Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  child: Text("Log In",
+                    textAlign: TextAlign.left,
+                    style:TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: GoogleFonts.roboto().fontFamily,
+                        
+                    )),
+                ))
+              ],
+            ),
             Row(
                mainAxisAlignment: MainAxisAlignment.center,
                
