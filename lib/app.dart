@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project/pages/welcome/welcome.dart';
 import './app_bloc.dart';
 import './app_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import './pages/welcome/bloc/welcome_bloc.dart';
 
 
 class StartApp extends StatelessWidget {
@@ -58,31 +60,55 @@ class CounterScreen extends StatelessWidget {
                 Container(
     
             
-                    child: Row(
-                      
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    child: Column(
                       children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: ElevatedButton(onPressed: (){
-                          BlocProvider.of<CounterCubit>(context).increment();
-                        },
-                        child: Text('Increment'),
-                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green[300],
-                                       
-                         )),
-                      ),
-                      ElevatedButton(onPressed: (){
-                        BlocProvider.of<CounterCubit>(context).decrement();
+                        Row(
+                          
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ElevatedButton(onPressed: (){
+                              BlocProvider.of<CounterCubit>(context).increment();
+                            },
+                            child: Text('Increment'),
+                             style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green[300],
+                                           
+                             )),
+                          ),
+                          ElevatedButton(onPressed: (){
+                            BlocProvider.of<CounterCubit>(context).decrement();
+                          },
+                          child: Text('Decrement'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.green[300],
+                           )
+                          ),
+
+                        ],
+                        ),
+
+                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                           ElevatedButton(onPressed: (){
+                      Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) =>  WelcomePage()));
                       },
-                      child: Text('Decrement'),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green[300],
-                       )
+                        backgroundColor: Colors.red[600],
+                       ),
+                      child: const Text('Log Out')
                       )
-                    ],
+                        ],
+                      )
+                      ],
+                     
                     ),
+                    
+
                   
                 )
 
