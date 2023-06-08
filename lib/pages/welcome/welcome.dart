@@ -4,6 +4,7 @@ import "package:flutter_bloc/flutter_bloc.dart";
 import 'package:project/pages/welcome/bloc/welcome_bloc.dart';
 import './bloc/welcome_events.dart';
 import './bloc/welcome_states.dart';
+import '../../app.dart';
 
 class WelcomePage extends StatelessWidget {
   WelcomePage({super.key});
@@ -39,16 +40,34 @@ class Pages extends StatelessWidget {
                   if(state is NormalOneState){
                     return  Text(state.s,
                          textAlign: TextAlign.left,
+                            style:TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: GoogleFonts.abel().fontFamily,
+                    
+                )
                      );
                   }
                   else if(state is NormalTwoState){
                   return  Text(state.ss,
                          textAlign: TextAlign.left,
+                            style:TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: GoogleFonts.abel().fontFamily,
+                    
+                )
                          );
                   }
                    else if(state is NormalThreeState){
                   return  Text(state.sss,
                          textAlign: TextAlign.left,
+                            style:TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: GoogleFonts.abel().fontFamily,
+                    
+                )
                          );
                   }
                   
@@ -61,7 +80,7 @@ class Pages extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: (){
-
+           Navigator.push(context,MaterialPageRoute(builder: (context) => StartApp()));
               }
             , child: Padding(
               padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -70,7 +89,7 @@ class Pages extends StatelessWidget {
                 style:TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
-                  fontFamily: GoogleFonts.abel().fontFamily,
+                  fontFamily: GoogleFonts.roboto().fontFamily,
                     
                 )),
             )),
