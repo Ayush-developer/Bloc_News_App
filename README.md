@@ -22,5 +22,3 @@ The Bloc News App is a Flutter-based mobile application designed to provide user
 ### Usage
 Once the app is running, you can navigate through the various sections, including the news feed and article details. The app supports user authentication, allowing users to log in and access personalized content.
 
-
-
